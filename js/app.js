@@ -36,7 +36,8 @@ class Lotto{
         }
     }
     createEventListeners(){
-        document.getElementById("sorsolo-btn").addEventListener("click",()=>{
+        document.getElementById("sorsolo-btn")
+        .addEventListener("click",()=>{
             sorsol()
         });
     }
