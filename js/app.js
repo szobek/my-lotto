@@ -5,6 +5,8 @@ class Lotto {
         this.lastNumbers = {};
         this.numbers = [];
         this.createEventListeners()
+        this.loadLastNumbersFromLocalStorage()
+        this.createDashboardFromNums()
     }
     generateNumbers() {
         this.numbers = [];
@@ -16,7 +18,7 @@ class Lotto {
         }
         this.numbers.sort((a, b) => a - b);
         this.createBalls()
-        this.createDashboardFromNums()
+        this.writeNumsToDashboard()
     }
     getNumbers() {
         return this.numbers;
@@ -45,9 +47,8 @@ class Lotto {
             });
     }
 
-    createDashboardFromNums() {
-        const wrapper = document.getElementById("dashboard")
-        wrapper.innerHTML = "";
+    writeNumsToDashboard() {
+
         this.numbers.forEach((num) => {
             if (this.lastNumbers[num]) {
                 this.lastNumbers[num]++;
@@ -55,7 +56,13 @@ class Lotto {
                 this.lastNumbers[num] = 1;
             }
         })
-        // console.log(this.lastNumbers);
+        this.createDashboardFromNums()
+    }
+
+    createDashboardFromNums() {
+        const wrapper = document.getElementById("dashboard")
+        wrapper.innerHTML = "";
+
         const table = document.createElement("table");
         const thead = document.createElement("thead");
         const tbody = document.createElement("tbody");
@@ -87,10 +94,20 @@ class Lotto {
         }
 
         tbody.append(...rows);
-
-
-
+        this.saveLastNumbersToLocalStorage()
     }
+
+    saveLastNumbersToLocalStorage() {
+        localStorage.setItem("lastNumbers", JSON.stringify(this.lastNumbers));
+    }
+
+    loadLastNumbersFromLocalStorage() {
+        const savedLastNumbers = localStorage.getItem("lastNumbers");
+        if (savedLastNumbers) {
+            this.lastNumbers = JSON.parse(savedLastNumbers);
+        }
+    }
+
 
 }
 
