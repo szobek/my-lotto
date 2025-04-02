@@ -1,2 +1,2 @@
-.wrapper .ball-row{display:flex;justify-content:center;gap:10px 20px}.wrapper .ball-row .ball{width:100px;height:100px;background-color:#0ff}
+.wrapper .ball-row{display:flex;flex-direction:row;justify-content:center;gap:10px 20px;flex-wrap:wrap}.wrapper .ball-row .ball{width:100px;height:100px;background:url(../assets/ball.png) no-repeat center;background-size:cover;position:relative}.wrapper .ball-row .ball span{position:absolute;top:25px;right:20px;font-weight:bolder;font-size:25px}
 /*# sourceMappingURL=style.css.map */
