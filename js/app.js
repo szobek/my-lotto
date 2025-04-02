@@ -2,6 +2,7 @@ class Lotto{
     numbers
     constructor(){
         this.numbers = [];
+        this.createEventListeners()
     }
     generateNumbers(){
         this.numbers = [];
@@ -34,10 +35,16 @@ class Lotto{
             row.appendChild(ballElement);
         }
     }
+    createEventListeners(){
+        document.getElementById("sorsolo-btn").addEventListener("click",()=>{
+            sorsol()
+        });
+    }
+    
 }
 
+const lotto = new Lotto();
 const sorsol=()=>{
-    const lotto = new Lotto();
     lotto.generateNumbers();            
 }
 
