@@ -1,0 +1,13 @@
+.wrapper {
+    .ball-row {
+        display: flex;
+        justify-content: center;
+        gap: 10px 20px;
+
+        .ball {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    }
+}

@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"style.css","sourcesContent":[]}
+{"version":3,"sources":["style.scss"],"names":[],"mappings":"AACI,mBACI,QAAA,KACA,gBAAA,OACA,IAAA,KAAA,KAEA,yBACI,MAAA,MACA,OAAA,MACA,iBAAA","file":"style.css","sourcesContent":[".wrapper {\r\n    .ball-row {\r\n        display: flex;\r\n        justify-content: center;\r\n        gap: 10px 20px;\r\n\r\n        .ball {\r\n            width: 100px;\r\n            height: 100px;\r\n            background-color: aqua;\r\n        }\r\n    }\r\n}"]}
