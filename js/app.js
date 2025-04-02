@@ -21,6 +21,7 @@ class Lotto{
 
     createBalls(){
         const wrapper=document.querySelector("#wrapper")
+        wrapper.innerHTML = "";
         const row = document.createElement("div");
         row.classList.add("ball-row");
         wrapper.appendChild(row);
@@ -32,10 +33,12 @@ class Lotto{
             ballElement.appendChild(text);
             row.appendChild(ballElement);
         }
-
-        
     }
 }
 
-const lotto = new Lotto();
-lotto.generateNumbers();
+const sorsol=()=>{
+    const lotto = new Lotto();
+    lotto.generateNumbers();            
+}
+
+
